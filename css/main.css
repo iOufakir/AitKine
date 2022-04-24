@@ -1882,7 +1882,7 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
   margin-bottom: 3rem;
 }
 
-.about-how {
+.about-how, .about-bottom-image {
   padding-top: 7.2rem;
   padding-bottom: 6rem;
 }
@@ -1959,6 +1959,10 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
   position: absolute;
   top: -12px;
   left: -27px;
+}
+
+.about-bottom-image{
+  text-align: center;
 }
 
 .about-bottom-image img {
