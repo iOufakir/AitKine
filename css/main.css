@@ -1075,7 +1075,7 @@ input::-moz-focus-inner {
 }
 
 .lity-opened {
-  background: rgb(0 0 0 / 80%);
+  background: rgb(0 0 0 / 90%);
 }
 
 /* ===================================================================
@@ -1145,6 +1145,7 @@ h1.intro-header::before {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 501;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 /* ------------------------------------------------------------------- 
@@ -1302,7 +1303,7 @@ h1.intro-header::before {
 #header-nav-wrap .header-main-nav li a span,
 #header-nav-wrap .header-main-nav li a span:visited {
   color: rgba(0, 0, 0, 0.75);
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 1rem;
 }
 
@@ -1529,7 +1530,6 @@ h1.intro-header::before {
   vertical-align: bottom;
   width: 100%;
   max-width: 80%;
-  opacity: 0.8 !important;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;  border-radius: 2rem;
 }
 
@@ -1538,7 +1538,7 @@ h1.intro-header::before {
 .home-social-list {
   position: absolute;
   right: 42px;
-  top: 50%;
+  top: 40%;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1555,7 +1555,7 @@ h1.intro-header::before {
   content: "";
   width: 2px;
   height: 42px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 1);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 12px;
@@ -1573,7 +1573,7 @@ h1.intro-header::before {
 .home-social-list li a:hover,
 .home-social-list li a:focus,
 .home-social-list li a:active {
-  color: #44c455;
+  color: #000000;
 }
 
 /* scroll down */
@@ -1589,6 +1589,7 @@ h1.intro-header::before {
   -ms-transform-origin: right top;
   transform-origin: right top;
   float: right;
+  text-shadow: 1px 2px 1px #000000;
 }
 
 .home-scrolldown i {
@@ -1597,7 +1598,7 @@ h1.intro-header::before {
 
 .home-scrolldown a:hover,
 .home-scrolldown a:focus {
-  color: #44c455 !important;
+  color: #000000 !important;
 }
 
 html[data-useragent*="MSIE 10.0"] .home-scrolldown,
@@ -2762,7 +2763,7 @@ footer ul a:visited {
   line-height: 60px;
   text-align: center;
   background: black;
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
   text-align: center;
   text-transform: uppercase;
   border-radius: 5px;
