@@ -1,0 +1,96 @@
+.nf-svg-icon {
+  width: 30px;
+  display: inline-block;
+  color: #c78c54;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slider-frame {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-frame .btn {
+  width: 40px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+}
+
+.slider-frame .btn.prev {
+  left: 0px;
+  display: none;
+}
+
+.slider-frame .btn.next {
+  right: 0px;
+  transform: rotate(180deg);
+}
+
+.slider-frame .slider-container {
+  -webkit-transition: margin-left 0.2s ease, left 0.5s ease;
+  transition: margin-left 0.2s ease, left 0.5s ease;
+  position: absolute;
+  left: 0;
+}
+
+.slider-frame .slider-container .slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: left;
+  position: relative;
+  top: 0;
+  -webkit-transition: width 0.2s ease, height 0.2s ease, top 0.2s ease;
+  transition: width 0.2s ease, height 0.2s ease, top 0.2s ease;
+  cursor: pointer;
+}
+
+.slide1{
+    background-image: url("../images/ait_kine1.png");
+}
+
+.slide2{
+    background-image: url("../images/ait_kine3.png");
+}
+
+.slide3{
+    background-image: url("../images/ait_kine2.png");
+}
+
+.slide4{
+    background-image: url("../images/ait_kine4.png");
+}
+
+.slide5{
+    background-image: url("../images/ait_kine5.png");
+}
+
+.slide6{
+    background-image: url("../images/ait_kine7.png");
+}
+
+.slide7{
+    background-image: url("../images/ait_kine8.png");
+}
+
+.slide8{
+    background-image: url("../images/ait_kine9.png");
+}

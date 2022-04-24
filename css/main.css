@@ -1,7 +1,4 @@
 /* =================================================================== 
- *
- *  Dazzle v1.0 Main Stylesheet
- *  04-27-2017
  *  ------------------------------------------------------------------
  *
  *  TOC:
@@ -65,7 +62,6 @@ body {
 }
 
 body {
-  background: #141515;
   font-family: "muli-regular", sans-serif;
   font-size: 1.6rem;
   line-height: 1.875;
@@ -1530,7 +1526,9 @@ h1.intro-header::before {
   vertical-align: bottom;
   width: 100%;
   max-width: 80%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 2rem;
 }
 
 /* home social-list */
@@ -2084,17 +2082,17 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
 }
 
 /* ===================================================================
- *  12. pricing - (_layout.scss)
+ *  12. Gallery - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
 
-#pricing {
+#gallery {
   background: #ebebeb;
   padding-top: 15rem;
   padding-bottom: 12rem;
 }
 
-#pricing h1 {
+#gallery h1 {
   margin-bottom: 3.6rem;
 }
 
@@ -2208,7 +2206,7 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 1024px) {
-  #pricing .pricing-content > [class*="col"] {
+  #pricing .gallery-content > [class*="col"] {
     width: 100% !important;
     float: none !important;
     clear: both !important;
@@ -2567,6 +2565,7 @@ footer {
   padding-bottom: 4.2rem;
   font-size: 1.5rem;
   line-height: 2.7rem;
+  background: #141515;
   color: rgba(255, 255, 255, 0.25);
 }
 
