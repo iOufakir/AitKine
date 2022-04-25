@@ -38,6 +38,12 @@ html {
   font-size: 10px;
 }
 
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 @media only screen and (max-width: 1024px) {
   html {
     font-size: 9.375px;
@@ -1887,11 +1893,11 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
   padding-bottom: 6rem;
 }
 
-.about-how h1.intro-header {
+h1.intro-header {
   text-align: center;
 }
 
-#about .about-how h1.intro-header::before {
+h1.intro-header::before {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
