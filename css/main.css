@@ -2596,7 +2596,7 @@ footer h4::before {
   display: block;
   width: 120px;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.55);
   position: absolute;
   left: 0;
   bottom: 0;
@@ -2618,7 +2618,7 @@ footer ul a:visited {
 
 .footer-logo {
   display: block;
-  margin: 0 0 5.4rem 0;
+  margin: 0 0 3.4rem 0;
   padding: 0;
   outline: 0;
   background: url("../images/logo2.png") no-repeat center;
