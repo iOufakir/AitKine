@@ -8,53 +8,6 @@
   width: 100%;
 }
 
-.overlay {
-  background: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  justify-items: center;
-  align-items: center;
-  transform: translateY(-100%);
-  transition: 0.2s;
-}
-
-.overlay.open {
-  display: grid;
-  transform: translateY(0);
-}
-
-.overlay_inner {
-  width: 400px;
-  height: 450px;
-  background: transparent;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-}
-
-.overlay_inner img {
-  grid-column: 1 / -1;
-  grid-row: 2 / -1;
-  object-fit: cover;
-  height: 100%;
-  border: 10px solid white;
-}
-
-.overlay_inner button {
-  justify-self: end;
-  background: none;
-  border: none;
-  color: white;
-  padding: 5px;
-}
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, 100px);
@@ -75,28 +28,12 @@
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   object-fit: cover;
+  transition: 0.3s;
+  cursor: zoom-in;
 }
 
-.item_overlay {
-  background: #ffc60032;
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
-  display: grid;
-  transition: 0.2s;
-  transform: translateY(100%);
-  align-items: center;
-  justify-items: center;
-}
-
-.item:hover .item_overlay {
-  transform: translateY(0);
-}
-
-.item_overlay button {
-  background: none;
-  color: white;
-  border: 2px solid white;
-  padding: 3px;
+.item img:hover {
+  transform: scale(1.1);
 }
 
 .item.h1 {
