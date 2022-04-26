@@ -3,7 +3,7 @@ var scaling = 1.5;
 var currentSliderCount = 0;
 var videoCount = document.querySelectorAll(".slide").length;
 var showCount = 4;
-var sliderCount = videoCount / showCount;
+var sliderCount;
 var controlsWidth = 40;
 var scollWidth = 0;
 
@@ -24,11 +24,15 @@ function init() {
   var frameWidth = window.innerWidth - 80;
   if (windowWidth >= 0 && windowWidth <= 414) {
     showCount = 2;
+    controlsWidth = 20;
   } else if (windowWidth >= 414 && windowWidth <= 768) {
     showCount = 3;
+    controlsWidth = 30;
   } else {
     showCount = 4;
   }
+  sliderCount = videoCount / showCount;
+
   var videoWidth = (windowWidth - controlsWidth * 2) / showCount;
   var videoHeight = Math.round(videoWidth);
 
@@ -109,12 +113,14 @@ function controls(frameWidth, scollWidth) {
   let prev = document.querySelector(".prev");
   let next = document.querySelector(".next");
 
-  next.onclick = function () {
+  next.onclick = function (event) {
+    event.preventDefault();
+    next.style.pointerEvents = 'none';
     console.log(currentSliderCount);
     console.log(sliderCount);
     scollWidth = scollWidth + frameWidth;
 
-    document.querySelector(".slider-container").style.left = - scollWidth + "px";
+    document.querySelector(".slider-container").style.left = -scollWidth + "px";
 
     let start = Date.now(); // remember start time
     let timer = setInterval(function () {
@@ -126,21 +132,24 @@ function controls(frameWidth, scollWidth) {
         return;
       }
 
-      if((Math.round(sliderCount) - 1) - currentSliderCount <= 1){
-        next.style.display = 'none';
-        prev.style.display = 'block';
-      }else if (currentSliderCount >= sliderCount - 1) {
+      if (Math.round(sliderCount) - 1 - currentSliderCount <= 1) {
+        next.style.display = "none";
+        prev.style.display = "block";
+      } else if (currentSliderCount >= sliderCount - 1) {
         document.querySelector(".slider-container").style.left = 0;
         currentSliderCount = 0;
         scollWidth = 0;
       } else {
-        prev.style.display = 'block';
+        prev.style.display = "block";
       }
       currentSliderCount++;
+      next.style.pointerEvents = 'auto';
     }, 250);
   };
 
-  prev.onclick = function () {
+  prev.onclick = function (event) {
+    event.preventDefault();
+    prev.style.pointerEvents = 'none';
     console.log(scollWidth);
     scollWidth = scollWidth - frameWidth;
 
@@ -157,14 +166,13 @@ function controls(frameWidth, scollWidth) {
       }
 
       currentSliderCount--;
-    console.log(currentSliderCount);
-     if(currentSliderCount <= 0){
-        prev.style.display = 'none';
-        next.style.display = 'block';
-      }else if(currentSliderCount < sliderCount){
-        next.style.display = 'block';
-      } 
-
+      if (currentSliderCount <= 0) {
+        prev.style.display = "none";
+        next.style.display = "block";
+      } else if (currentSliderCount < sliderCount) {
+        next.style.display = "block";
+      }
+      prev.style.pointerEvents = 'auto';
     }, 250);
   };
 }

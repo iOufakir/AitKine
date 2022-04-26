@@ -24,9 +24,8 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  right: 1rem;
   float: right;
-  z-index: 1000;
+  z-index: 4000;
   cursor: pointer;
 }
 
