@@ -1147,7 +1147,7 @@ h1.intro-header::before {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  z-index: 501;
+  z-index: 601;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -1207,7 +1207,7 @@ h1.intro-header::before {
 
 .header-menu-toggle:hover,
 .header-menu-toggle:focus {
-  color: #ffffff;
+  color: #000000;
 }
 
 .header-menu-toggle span {
@@ -1220,7 +1220,7 @@ h1.intro-header::before {
   top: 50%;
   right: auto;
   bottom: auto;
-  background-color: white;
+  background-color: #000000;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   font: 0/0 a;
@@ -1256,7 +1256,7 @@ h1.intro-header::before {
 
 .header-menu-toggle.is-clicked span::before,
 .header-menu-toggle.is-clicked span::after {
-  background-color: white;
+  background-color: #000000;
 }
 
 .header-menu-toggle.is-clicked span::before {
@@ -1358,7 +1358,7 @@ h1.intro-header::before {
     width: 100%;
     right: auto;
     left: 0;
-    background-color: #111111;
+    background-color: #ffffff;
     padding: 120px 40px 54px;
   }
   #header-nav-wrap .header-main-nav {
