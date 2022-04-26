@@ -1603,7 +1603,7 @@ h1.intro-header::before {
 
 .home-scrolldown a:hover,
 .home-scrolldown a:focus {
-  color: #000000 !important;
+  font-weight: 700;
 }
 
 html[data-useragent*="MSIE 10.0"] .home-scrolldown,
