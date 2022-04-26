@@ -1,3 +1,1 @@
-# AitKin
-
-## A free SPA template using JavaScript
+# Ait Kine Website
