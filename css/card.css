@@ -1,0 +1,86 @@
+.card {
+  background: #ebebeb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 2.8rem;
+  margin: 2rem auto;
+  width: 80rem;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.card__info {
+  text-align: left;
+}
+
+.card p {
+  margin-bottom: 0;
+  line-height: 3rem;
+}
+
+.card__info__place {
+  text-decoration: underline;
+  font-size: 14px;
+  color: #2f2f31;
+}
+
+.card__info__time {
+  font-size: 30px;
+  color: #2f2f31;
+}
+
+.card__info__date {
+  font-size: 14px;
+  color: #2f2f31;
+}
+
+.card__weather {
+  align-items: center;
+  display: inline-flex;
+}
+
+.card__weather__icon {
+  animation: move 1s infinite alternate ease-in-out;
+  width: 8rem !important;
+}
+
+.card__weather__temp {
+  color: #2f2f31;
+  font-size: 30px;
+}
+
+.card__weather__description {
+  position: absolute;
+  bottom: 5.2rem;
+  right: 7.8rem;
+}
+
+@keyframes move {
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .card {
+    justify-content: flex-start;
+  }
+  .card__weather {
+    display: block;
+  }
+  .card__weather__description {
+    position: relative;
+    float: right;
+  }
+
+  .card__weather__temp {
+    position: relative;
+    bottom: 2.2rem;
+    }
+  .card__weather__icon {
+    position: relative;
+    bottom: 1rem;
+  }
+}

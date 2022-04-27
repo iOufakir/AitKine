@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/touchTouch.min.css">
 
     <!-- script
@@ -56,7 +57,7 @@
                 <li><a class="smoothscroll" href="#about" title="about"><span>About</span></a></li>
                 <li><a class="smoothscroll" href="#gallery" title="gallery">
                         <span>Gallery</span></a></li>
-                <li><a class="smoothscroll" href="#testimonials" title="testimonials"><span>Testimonials</span></a></li>
+                <li><a class="smoothscroll" href="#weather" title="weather"><span>weather</span></a></li>
                 <li><a class="smoothscroll" href="#contact" title="contact"><span>Contact</span></a></li>
             </ul>
 
@@ -530,122 +531,45 @@
                 </a>
             </div>
 
-            <!--<div class="overlay">
-                <div class="overlay_inner">
-                    <button class="overlay_close">Close</button>
-                    <img>
-                </div>
-            </div>-->
-
-            <!-- <div class="col-four pricing-intro">
-                <h1 class="intro-header" data-aos="fade-up">Our Pricing Options</h1>
-
-                <p data-aos="fade-up">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                    architecto beatae vitae dicta sunt explicabo. Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium.
-                </p>
-            </div>
-
-            <div class="col-eight pricing-table">
-                <div class="row">
-
-                    <div class="col-six plan-wrap">
-                        <div class="plan-block" data-aos="fade-up">
-
-                            <div class="plan-top-part">
-                                <h3 class="plan-block-title">Lite Plan</h3>
-                                <p class="plan-block-price"><sup>$</sup>25</p>
-                                <p class="plan-block-per">Per Month</p>
-                            </div>
-
-                            <div class="plan-bottom-part">
-                                <ul class="plan-block-features">
-                                    <li><span>3GB</span> Storage</li>
-                                    <li><span>10GB</span> Bandwidth</li>
-                                    <li><span>5</span> Databases</li>
-                                    <li><span>30</span> Email Accounts</li>
-                                </ul>
-
-                                <a class="button button-primary large" href="">Get Started</a>
-                            </div>
-
-                        </div>
-                    </div> 
-
-                    <div class="col-six plan-wrap">
-                        <div class="plan-block primary" data-aos="fade-up">
-
-                            <div class="plan-top-part">
-                                <h3 class="plan-block-title">Pro Plan</h3>
-                                <p class="plan-block-price"><sup>$</sup>50</p>
-                                <p class="plan-block-per">Per Month</p>
-                            </div>
-
-                            <div class="plan-bottom-part">
-                                <ul class="plan-block-features">
-                                    <li><span>5GB</span> Storage</li>
-                                    <li><span>20GB</span> Bandwidth</li>
-                                    <li><span>15</span> Databases</li>
-                                    <li><span>70</span> Email Accounts</li>
-                                </ul>
-
-                                <a class="button button-primary large" href="">Get Started</a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>-->
-
-        </div> <!-- end pricing-content -->
-    </section> <!-- end pricing -->
+        </div> <!-- end gallery-content -->
+    </section> <!-- end gallery -->
 
 
-    <!-- Testimonials Section
+    <!-- weather Section
     ================================================== -->
-    <section id="testimonials">
-
+    <section id="weather">
         <div class="row">
             <div class="col-twelve">
-                <h1 class="intro-header" data-aos="fade-up">What They Say About Our App.</h1>
+                <h1 class="intro-header" data-aos="fade-up">Weather</h1>
             </div>
         </div>
 
         <div class="row owl-wrap">
 
-            <div id="testimonial-slider" data-aos="fade-up">
+            <div id="weather-slider" data-aos="fade-up">
 
                 <div class="slides owl-carousel">
-
-                    <div>
-                        <p>
-                            Your work is going to fill a large part of your life, and the only way to be truly satisfied
-                            is
-                            to do what you believe is great work. And the only way to do great work is to love what you
-                            do.
-                            If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart,
-                            you'll know when you find it.
-                        </p>
-
-                        <div class="testimonial-author">
-                            <img src="images/avatars/user-02.jpg" alt="Author image">
-                            <div class="author-info">
-                                Steve Jobs
-                                <span class="position">CEO, Apple.</span>
+                        <div class="card">
+                            <div class="card__info">
+                                <p class="card__info__place">Aît Kine</p>
+                                <p class="card__info__time">06:20 AM</p>
+                                <p class="card__info__date">Novemaber 10.2020 | Wednesday</p>
+                            </div>
+                            <div class="card__weather">
+                                <img class="card__weather__icon" alt="Weather icon" />
+                                <p class="card__weather__temp">18°C</p>
+                                <p class="card__weather__description">Clear</p>
                             </div>
                         </div>
-                    </div>
 
-                    <div>
+                    <div class="weather-slider-v1">
                         <p>
                             This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
                             Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
                             nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
                         </p>
 
-                        <div class="testimonial-author">
+                        <div class="weather-author">
                             <img src="images/avatars/user-03.jpg" alt="Author image">
                             <div class="author-info">
                                 John Doe
@@ -656,11 +580,11 @@
 
                 </div> <!-- end slides -->
 
-            </div> <!-- end testimonial-slider -->
+            </div> <!-- end weather-slider -->
 
         </div> <!-- end flex-container -->
 
-    </section> <!-- end testimonials -->
+    </section> <!-- end weather -->
 
 
     <!-- download

@@ -1,27 +1,27 @@
-var scaling = 1.5;
+let scaling = 1.5;
 //count
-var currentSliderCount = 0;
-var videoCount = document.querySelectorAll(".slide").length;
-var showCount = 4;
-var sliderCount;
-var controlsWidth = 40;
-var scollWidth = 0;
+let currentSliderCount = 0;
+let videoCount = document.querySelectorAll(".slide").length;
+let showCount = 4;
+let sliderCount;
+let controlsWidth = 40;
+let scollWidth = 0;
 
 window.onload = init;
 window.onresize = init;
 
 function init() {
   // elements
-  var sliderFrame = document.querySelector(".slider-frame");
-  var sliderContainer = document.querySelector(".slider-container");
-  var slides = document.querySelectorAll(".slide");
+  let sliderFrame = document.querySelector(".slider-frame");
+  let sliderContainer = document.querySelector(".slider-container");
+  let slides = document.querySelectorAll(".slide");
 
   //counts
-  var scollWidth = 0;
+  let scollWidth = 0;
 
   //sizes
-  var windowWidth = window.innerWidth;
-  var frameWidth = window.innerWidth - 80;
+  let windowWidth = window.innerWidth;
+  let frameWidth = window.innerWidth - 80;
   if (windowWidth >= 0 && windowWidth <= 414) {
     showCount = 2;
     controlsWidth = 20;

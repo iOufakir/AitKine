@@ -74,6 +74,7 @@
       nav: false,
       autoHeight: true,
       items: 1,
+      animateOut: "fadeOut",
     });
   };
 
@@ -218,7 +219,53 @@
     ssAOS();
     ssBackToTop();
 
+    // Gallery
     touchTouch(document.body.querySelectorAll(".item-image"));
+
+    // Weather
+    const TIMEZONE = "Africa/Casablanca";
+    const weatherIcon = document.querySelector(".active .card__weather__icon");
+    const weatherCityDate = document.querySelector(".active .card__info__date");
+    const weatherCityTime = document.querySelector(".active .card__info__time");
+    let currentDateTime = new Date();
+    const currentDate = currentDateTime.toLocaleDateString("en-US", {
+      timeZone: TIMEZONE,
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    weatherCityDate.innerHTML = currentDate;
+    setInterval(() => {
+      currentDateTime = new Date();
+      weatherCityTime.innerHTML = currentDateTime.toLocaleTimeString("en-US", {
+        timeZone: TIMEZONE,
+      });
+    }, 1000);
+
+    fetch(
+      "https://api.openweathermap.org/data/2.5/weather?lat=30.0202484&lon=-8.2021836&appid=8daf4c5b477f969fe88a82412b598b68&units=metric",
+      { cache: "no-store" }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const weatherTemp = document.querySelector(
+          ".active .card__weather__temp"
+        );
+        weatherTemp.innerHTML = `${Number(data.main.temp).toFixed(0)}° C`;
+
+        const weatherDescription = document.querySelector(
+          ".active .card__weather__description"
+        );
+        weatherDescription.innerHTML = data.weather[0].main;
+
+        weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+        console.info("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
 
     // to use the mailchimp form, uncomment the
     // function call ssAjaxChimp() below:
