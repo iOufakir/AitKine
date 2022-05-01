@@ -597,10 +597,12 @@ textarea,
 select {
   display: block;
   height: 6rem;
+  width: 100%;
   padding: 1.5rem 2rem;
   border: 0;
   outline: none;
-  color: #333333;
+  color: #ffffff;
+  font-weight: 600;
   font-family: "muli-regular", sans-serif;
   font-size: 1.5rem;
   line-height: 3rem;
@@ -674,7 +676,8 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  color: #000000;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 label,
@@ -710,25 +713,25 @@ label > input[type="radio"] {
  * ------------------------------------------------------------------- */
 
 ::-webkit-input-placeholder {
-  color: #838383;
+  color: #e2e0e0;
 }
 
 :-moz-placeholder {
-  color: #838383;
+  color: #e2e0e0;
   /* Firefox 18- */
 }
 
 ::-moz-placeholder {
-  color: #838383;
+  color: #e2e0e0;
   /* Firefox 19+ */
 }
 
 :-ms-input-placeholder {
-  color: #838383;
+  color: #e2e0e0;
 }
 
 .placeholder {
-  color: #838383 !important;
+  color: #e2e0e0 !important;
 }
 
 /* ------------------------------------------------------------------- 
@@ -744,7 +747,8 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: none;
-  -webkit-text-fill-color: #57ca67;
+  -webkit-text-fill-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.1);
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -765,7 +769,7 @@ input[type="button"] {
   line-height: calc(5.4rem - 0.6rem);
   padding: 0 3rem;
   margin: 0 0.3rem 1.2rem 0;
-  color: #222222;
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
@@ -773,8 +777,8 @@ input[type="button"] {
   border-radius: 0.5rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #c5c5c5;
-  border: 0.3rem solid #c5c5c5;
+  background-color: #c78c54;
+  border: 0.3rem solid #c78c54;
 }
 
 .button:hover,
@@ -787,8 +791,8 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  background-color: #b8b8b8;
-  border-color: #b8b8b8;
+  background-color: #ffffff;
+  border-color: #ffffff;
   color: #000000;
   outline: 0;
 }
@@ -2212,74 +2216,6 @@ h1.intro-header::before {
   margin-top: 3rem;
 }
 
-/* ------------------------------------------------------------------- 
- * responsive:
- * pricing 
- * ------------------------------------------------------------------- */
-
-@media only screen and (max-width: 1024px) {
-  #pricing .gallery-content > [class*="col"] {
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  #pricing [class*="col"].pricing-intro {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 650px;
-  }
-  #pricing [class*="col"].pricing-intro h1::before {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-  #pricing [class*="col"].pricing-table {
-    margin-top: 5.4rem;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .pricing-table .plan-wrap {
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .pricing-table .plan-top-part,
-  .pricing-table .plan-bottom-part {
-    float: left;
-  }
-  .pricing-table .plan-top-part {
-    width: 41.66667%;
-    margin-top: 1.2rem;
-  }
-  .pricing-table .plan-bottom-part {
-    width: 58.33333%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #pricing [class*="col"].pricing-table {
-    max-width: 360px;
-  }
-  #pricing .plan-top-part,
-  #pricing .plan-bottom-part {
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 /* ===================================================================
  *  13. testimonials - (_layout.scss)
  *
@@ -2445,7 +2381,7 @@ h1.intro-header::before {
 
 /* ------------------------------------------------------------------- 
  * responsive:
- * testimonials
+ * weather
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 1024px) {
@@ -2489,82 +2425,37 @@ h1.intro-header::before {
 }
 
 /* ===================================================================
- *  14. download - (_layout.scss)
+ *  14. contact-us - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
 
-#download {
+.contact-us {
   background: #c78c54;
-  color: #b2fabc;
+  color: #ffffff;
   padding-top: 12rem;
-  padding-bottom: 12rem;
+  padding-bottom: 4rem;
   text-align: center;
 }
 
-#download h1 {
+.contact-us h1 {
   color: #ffffff;
 }
 
-#download h1::before {
-  background-color: #2a9038;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+.contact-us form {
+  margin-top: 6rem;
 }
 
-#download .lead {
-  color: #b2fabc;
-  margin-top: 4.8rem;
+.contact-us h1::before {
+  background-color: #ffffff;
 }
 
-#download .row {
+.contact-us .row {
   max-width: 800px;
 }
 
-#download .download-badges {
-  list-style: none;
-  margin: 0;
-  text-align: center;
-}
-
-#download .download-badges li {
-  display: inline-block;
-  margin: 0 7.5px;
-  padding-left: 0;
-}
-
-#download .download-badges li a {
-  display: block;
-  width: 230px;
-  height: 71px;
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 230px 71px;
-}
-
-#download .download-badges li a.badge-appstore {
-  background-image: url("../images/appstore.png");
-}
-
-#download .download-badges li a.badge-googleplay {
-  background-image: url("../images/google-play.png");
-}
-
-/* ------------------------------------------------------------------- 
- * responsive:
- * download
- * ------------------------------------------------------------------- */
-
-@media only screen and (max-width: 768px) {
-  #download .download-badges li a {
-    width: 194px;
-    height: 60px;
-    background-size: 194px 60px;
-  }
+.contact-us .btn {
+  border: 2px solid #ffffff;
+  text-transform: uppercase;
 }
 
 /* ===================================================================

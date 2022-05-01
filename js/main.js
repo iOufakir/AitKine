@@ -269,6 +269,6 @@
 
     // to use the mailchimp form, uncomment the
     // function call ssAjaxChimp() below:
-    // ssAjaxChimp();
+     ssAjaxChimp();
   })();
 })(jQuery);
