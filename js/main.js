@@ -23,7 +23,17 @@
   var ssPreloader = function () {
     $WIN.on("load", function () {
       // force page scroll position to top at page refresh
-      $("html, body").animate({ scrollTop: 0 }, "normal");
+
+      if (isCurrentWebsiteHashValid()) {
+        $("html, body").animate(
+          {
+            scrollTop: $(window.location.hash).offset().top,
+          },
+          "normal"
+        );
+      } else {
+        $("html, body").animate({ scrollTop: 0 }, "normal");
+      }
 
       // will fade out the whole preloader DIV that covers the website.
       $("#preloader").delay(500).fadeOut("slow");
@@ -88,13 +98,14 @@
       handler: function (direction) {
         var active_section;
 
+        let urlHash = this.element.id;
+        if (isCurrentWebsiteHashValid()) {
+          urlHash = window.location.hash.slice(1);
+        }
         active_section = $("section#" + this.element.id);
 
         if (direction === "up") active_section = active_section.prev();
-
-        var active_link = $(
-          '.header-main-nav li a[href="#' + active_section.attr("id") + '"]'
-        );
+        var active_link = $('.header-main-nav li a[href="#' + urlHash + '"]');
 
         navigation_links.parent().removeClass("current");
         active_link.parent().addClass("current");
@@ -108,24 +119,22 @@
    * ------------------------------------------------------ */
   var ssSmoothScroll = function () {
     $(".smoothscroll").on("click", function (e) {
-      var target = this.hash,
-        $target = $(target);
-
       e.preventDefault();
       e.stopPropagation();
 
-      $("html, body")
-        .stop()
-        .animate(
-          {
-            scrollTop: $target.offset().top,
-          },
-          cfg.scrollDuration,
-          "swing",
-          function () {
-            window.location.hash = target;
-          }
-        );
+      var target = this.hash;
+
+      $("html, body").animate(
+        {
+          scrollTop: $(target).offset().top,
+        },
+        cfg.scrollDuration,
+        "swing",
+        function () {
+          window.location.hash = target;
+        }
+      );
+      window.location.hash = target;
     });
   };
 
@@ -205,6 +214,12 @@
     });
   };
 
+  const isCurrentWebsiteHashValid = () =>
+    window.location.hash &&
+    ["#home", "#about", "#gallery", "#weather", "#contact"].includes(
+      window.location.hash
+    );
+
   /* Initialize
    * ------------------------------------------------------ */
   (function ssInit() {
@@ -269,6 +284,6 @@
 
     // to use the mailchimp form, uncomment the
     // function call ssAjaxChimp() below:
-     ssAjaxChimp();
+    ssAjaxChimp();
   })();
 })(jQuery);

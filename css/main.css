@@ -1303,29 +1303,33 @@ h1.intro-header::before {
 }
 
 #header-nav-wrap .header-main-nav li a {
-  display: block;
   line-height: 72px;
 }
 
-#header-nav-wrap .header-main-nav li a span,
-#header-nav-wrap .header-main-nav li a span:visited {
+#header-nav-wrap .header-main-nav li a,
+#header-nav-wrap .header-main-nav li a:visited {
   color: rgba(0, 0, 0, 0.75);
   padding: 0.8rem 1.8rem;
   border-radius: 1rem;
 }
 
-#header-nav-wrap .header-main-nav li a span:hover,
-#header-nav-wrap .header-main-nav li a span:focus {
+#header-nav-wrap .header-main-nav li a:hover,
+#header-nav-wrap .header-main-nav li a:focus {
   color: #000000;
   box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
 }
 
-#header-nav-wrap .header-main-nav li.current a span {
+#header-nav-wrap .header-main-nav li.current a {
   color: #fff;
   background: black;
   text-decoration: underline;
   text-underline-offset: 2px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#header-nav-wrap .header-main-nav li.current a span {
+  position: relative;
+  bottom: 2px;
 }
 
 #header-nav-wrap .cta {
@@ -1377,10 +1381,7 @@ h1.intro-header::before {
     padding: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   }
-  #header-nav-wrap .header-main-nav li a {
-    padding: 18px 0;
-    line-height: 18px;
-  }
+
   #header-nav-wrap .cta {
     height: 42px;
     line-height: calc(42px - 0.6rem);
@@ -1589,7 +1590,7 @@ h1.intro-header::before {
 
 .home-scrolldown {
   position: absolute;
-  bottom: 0;
+  bottom: 4rem;
   right: 0;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -2384,12 +2385,6 @@ h1.intro-header::before {
  * weather
  * ------------------------------------------------------------------- */
 
-@media only screen and (max-width: 1024px) {
-  #weather-slider p {
-    font-size: 3rem;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   #weather-slider p {
     font-size: 2.6rem;
@@ -2410,17 +2405,11 @@ h1.intro-header::before {
   #weather .owl-wrap {
     width: 90%;
   }
-  #weather-slider p {
-    font-size: 2.4rem;
-  }
 }
 
 @media only screen and (max-width: 400px) {
   #weather .owl-wrap {
     width: 100%;
-  }
-  #weather-slider p {
-    font-size: 2rem;
   }
 }
 

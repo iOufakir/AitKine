@@ -122,7 +122,7 @@
 
         </div> <!-- end home-content -->
 
-        <ul class="home-social-list">
+        <!-- <ul class="home-social-list">
             <li>
                 <a href="#"><i class="fa fa-facebook-square"></i></a>
             </li>
@@ -136,7 +136,7 @@
                 <a href="#"><i class="fa fa-youtube-play"></i></a>
             </li>
         </ul>
-        <!-- end home-social-list -->
+         end home-social-list -->
 
         <div class="home-scrolldown">
             <a href="#about" class="scroll-icon smoothscroll">
@@ -571,9 +571,12 @@
                             <p class="card__info__time">06:20 AM</p>
                             <p class="card__info__date">Novemaber 10.2020 | Wednesday</p>
                         </div>
-                        <div class="card__weather">
-                            <img class="card__weather__icon" alt="Weather icon" />
-                            <p class="card__weather__temp">18°C</p>
+                        <div class="card__weather__block">
+                            <div class="card__weather">
+                                <img class="card__weather__icon" alt="Weather icon" />
+                                <p class="card__weather__temp">18°C</p>
+                            </div>
+
                             <p class="card__weather__description">Clear</p>
                         </div>
                     </div>
@@ -608,8 +611,7 @@
         <div class="row">
             <div class="col-full">
                 <h1 class="intro-header" data-aos="fade-up">Contact</h1>
-
-                <form>
+                <form novalidate method="POST">
                     <input type="text" name="name" id="userName" placeholder="Name" autocomplete="on" required>
                     <input type="email" name="email" id="email" placeholder="Email" autocomplete="on" required>
                     <textarea name="message" id="message" placeholder="Message" required></textarea>

@@ -6,7 +6,8 @@
   border-radius: 2rem;
   padding: 2.8rem;
   margin: 2rem auto;
-  width: 80rem;
+  max-width: 80rem;
+  width: 100%;
   font-weight: 700;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
@@ -52,9 +53,10 @@
 }
 
 .card__weather__description {
-  position: absolute;
-  bottom: 5.2rem;
-  right: 7.8rem;
+  float: right;
+  position: relative;
+  top: 5rem;
+  right: 4rem;
 }
 
 @keyframes move {
@@ -78,7 +80,7 @@
   .card__weather__temp {
     position: relative;
     bottom: 2.2rem;
-    }
+  }
   .card__weather__icon {
     position: relative;
     bottom: 1rem;
