@@ -2454,7 +2454,6 @@ h1.intro-header::before {
 
 footer {
   padding-top: 9rem;
-  padding-bottom: 4.2rem;
   font-size: 1.5rem;
   line-height: 2.7rem;
   background: #141515;
@@ -2539,6 +2538,10 @@ footer ul a:visited {
   margin-right: 0;
 }
 
+.footer-site-links {
+  float: right;
+}
+
 .footer-site-links .list-links {
   margin-bottom: 3rem;
 }
@@ -2615,6 +2618,18 @@ footer ul a:visited {
 .footer-bottom {
   margin-top: 6.6rem;
   text-align: center;
+}
+
+.copyright-col {
+  height: 20rem;
+  position: relative;
+}
+
+.copyright-block {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 .footer-bottom .copyright span {

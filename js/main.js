@@ -9,7 +9,7 @@
   var cfg = {
       scrollDuration: 800, // smoothscroll duration
       mailChimpURL:
-        "https://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e6957d85dc", // mailchimp url
+        "https://us12.list-manage.com/contact-form/post?u=2b414299b08ad29f9fc976054&form_id=65c5dfa0979d41360789e69d0047b599",
     },
     $WIN = $(window);
 
@@ -27,7 +27,7 @@
       if (isCurrentWebsiteHashValid()) {
         $("html, body").animate(
           {
-            scrollTop: $(window.location.hash).offset().top,
+            scrollTop: $(window.location.hash).offset().top + 5,
           },
           "normal"
         );
@@ -88,53 +88,44 @@
     });
   };
 
-  /* Highlight the current section in the navigation bar
-   * ------------------------------------------------------ */
-  var ssWaypoints = function () {
-    var sections = $("section"),
-      navigation_links = $(".header-main-nav li a");
-
-    sections.waypoint({
-      handler: function (direction) {
-        var active_section;
-
-        let urlHash = this.element.id;
-        if (isCurrentWebsiteHashValid()) {
-          urlHash = window.location.hash.slice(1);
-        }
-        active_section = $("section#" + this.element.id);
-
-        if (direction === "up") active_section = active_section.prev();
-        var active_link = $('.header-main-nav li a[href="#' + urlHash + '"]');
-
-        navigation_links.parent().removeClass("current");
-        active_link.parent().addClass("current");
-      },
-
-      offset: "25%",
-    });
-  };
-
   /* Smooth Scrolling
    * ------------------------------------------------------ */
   var ssSmoothScroll = function () {
+    $(document).scroll(function () {
+      $("section").each(function () {
+        if (
+          $(this).position().top <= $(document).scrollTop() &&
+          $(this).position().top + $(this).outerHeight() >
+            $(document).scrollTop() + 5
+        ) {
+          const sectionId = $(this).attr("id");
+          document.querySelector(".current").classList.remove("current");
+          const active_link = $(
+            '.header-main-nav li a[href="#' + sectionId + '"]'
+          );
+          active_link.parent().addClass("current");
+        }
+      });
+    });
+
     $(".smoothscroll").on("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
 
-      var target = this.hash;
-
+      var target = this;
       $("html, body").animate(
         {
-          scrollTop: $(target).offset().top,
+          scrollTop: $(target.hash).offset().top,
         },
         cfg.scrollDuration,
         "swing",
         function () {
-          window.location.hash = target;
+          window.location.hash = target.hash;
+          document.querySelector(".current").classList.remove("current");
+          target.parentElement.classList.add("current");
         }
       );
-      window.location.hash = target;
+      window.location.hash = target.hash;
     });
   };
 
@@ -142,6 +133,25 @@
    * ------------------------------------------------------ */
   var ssPlaceholder = function () {
     $("input, textarea, select").placeholder();
+  };
+
+  /* Contact US
+   * ------------------------------------------------------ */
+  const contactUs = () => {
+    const form = document.querySelector("#contact-form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const data = {
+        name: document.querySelector("#f-name").value,
+        email: document.querySelector("#f-email").value,
+        message: document.querySelector("#f-message").value,
+      };
+
+      window.open(
+        `mailto:01ilyas.dev@gmail.com?from=${data.email}&subject=${data.name} | ${data.email}&body=${data.message}`
+      );
+    });
   };
 
   /* Alert Boxes
@@ -163,36 +173,6 @@
       once: true,
       disable: "mobile",
     });
-  };
-
-  /* AjaxChimp
-   * ------------------------------------------------------ */
-  var ssAjaxChimp = function () {
-    $("#mc-form").ajaxChimp({
-      language: "es",
-      url: cfg.mailChimpURL,
-    });
-
-    // Mailchimp translation
-    //
-    //  Defaults:
-    //	 'submit': 'Submitting...',
-    //  0: 'We have sent you a confirmation email',
-    //  1: 'Please enter a value',
-    //  2: 'An email address must contain a single @',
-    //  3: 'The domain portion of the email address is invalid (the portion after the @: )',
-    //  4: 'The username portion of the email address is invalid (the portion before the @: )',
-    //  5: 'This email address looks fake or invalid. Please enter a real email address'
-
-    $.ajaxChimp.translations.es = {
-      submit: "Submitting...",
-      0: '<i class="fa fa-check"></i> We have sent you a confirmation email',
-      1: '<i class="fa fa-warning"></i> You must enter a valid e-mail address.',
-      2: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-      3: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-      4: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-      5: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-    };
   };
 
   /* Back to Top
@@ -227,7 +207,6 @@
     ssMobileMenu();
     ssFitVids();
     ssOwlCarousel();
-    ssWaypoints();
     ssSmoothScroll();
     ssPlaceholder();
     ssAlertBoxes();
@@ -275,15 +254,11 @@
         weatherDescription.innerHTML = data.weather[0].main;
 
         weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-
-        console.info("Success:", data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
 
-    // to use the mailchimp form, uncomment the
-    // function call ssAjaxChimp() below:
-    ssAjaxChimp();
+    contactUs();
   })();
 })(jQuery);
