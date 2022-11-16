@@ -260,5 +260,10 @@
       });
 
     contactUs();
+
+    const actionWatchVideo = document.querySelector('#action-watch-video');
+    actionWatchVideo.addEventListener('click', () => {
+        document.querySelector('#aitkine-video').click();
+    });
   })();
 })(jQuery);
