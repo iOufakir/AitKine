@@ -1127,6 +1127,31 @@ h1.intro-header::before {
   h1.intro-header {
     font-size: 3.1rem;
   }
+
+  .goTop {
+    margin: 2rem;
+  }
+
+  .footer-site-links {
+    position: relative;
+    bottom: 10rem;
+  }
+
+  div.copyright-col {
+    position: relative;
+    top: 22rem;
+    height: 100%;
+    margin-top: 12rem;
+  }
+
+  div.copyright-col span {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .copyright-col .copyright-block {
+    line-height: 0;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -2405,6 +2430,15 @@ h1.intro-header::before {
   #weather .owl-wrap {
     width: 90%;
   }
+
+  #weather-slider p {
+    font-size: 2rem;
+  }
+
+  p.card__weather__description {
+    top: 1rem;
+    right: 0;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -2626,24 +2660,25 @@ footer ul a:visited {
 }
 
 .copyright-block {
+  line-height: 20rem;
+  height: 100%;
   text-align: center;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
 }
 
-.footer-bottom .copyright span {
+.copyright-block span {
   display: inline-block;
+  line-height: 1.5;
+  vertical-align: bottom;
 }
 
-.footer-bottom .copyright span::after {
+.copyright-block span::after {
   content: "|";
   display: inline-block;
   padding: 0 1rem 0 1.2rem;
   color: rgba(255, 255, 255, 0.1);
 }
 
-.footer-bottom .copyright span:last-child::after {
+.copyright-block span:last-child::after {
   display: none;
 }
 
