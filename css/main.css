@@ -1169,7 +1169,7 @@ h1.intro-header::before {
   width: 100%;
   height: 72px;
   border-bottom-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   background-color: #ffffff;
   position: fixed;
   left: 50%;
