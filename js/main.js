@@ -7,10 +7,10 @@
   "use strict";
 
   var cfg = {
-      scrollDuration: 800, // smoothscroll duration
-      mailChimpURL:
-        "https://us12.list-manage.com/contact-form/post?u=2b414299b08ad29f9fc976054&form_id=65c5dfa0979d41360789e69d0047b599",
-    },
+    scrollDuration: 800, // smoothscroll duration
+    mailChimpURL:
+      "https://us12.list-manage.com/contact-form/post?u=2b414299b08ad29f9fc976054&form_id=65c5dfa0979d41360789e69d0047b599",
+  },
     $WIN = $(window);
 
   // Add the User Agent to the <html>
@@ -96,7 +96,7 @@
         if (
           $(this).position().top <= $(document).scrollTop() &&
           $(this).position().top + $(this).outerHeight() >
-            $(document).scrollTop() + 5
+          $(document).scrollTop() + 5
         ) {
           const sectionId = $(this).attr("id");
           document.querySelector(".current").classList.remove("current");
@@ -155,7 +155,7 @@
   };
 
   /* Alert Boxes
-  	------------------------------------------------------- */
+    ------------------------------------------------------- */
   var ssAlertBoxes = function () {
     $(".alert-box").on("click", ".close", function () {
       $(this).parent().fadeOut(500);
@@ -263,7 +263,7 @@
 
     const actionWatchVideo = document.querySelector('#action-watch-video');
     actionWatchVideo.addEventListener('click', () => {
-        document.querySelector('#aitkine-video').click();
+      document.querySelector('#aitkine-video').click();
     });
   })();
 })(jQuery);

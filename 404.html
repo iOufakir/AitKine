@@ -1,0 +1,154 @@
+---
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found - Ait Kine</title>
+    <meta name="author" content="Ilyas Oufakir">
+    <meta name="description"
+        content="Encountered a 404 error? Don't worry! Learn more about why this page isn't available and explore other parts of our site.">
+
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        body {
+            height: 100vh;
+            user-select: none;
+            line-height: 0.8;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        .not-found-container .text {
+            text-decoration: underline dotted;
+            margin-top: 2.6rem;
+        }
+
+
+        .not-found-detail {
+            margin: 2rem 2rem 0;
+        }
+
+        .not-found-detail div.header-logo {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            left: 0;
+            top: 6rem;
+        }
+
+        div[title='404'] {
+            animation: glitch 1s linear infinite;
+            position: relative;
+            color: #151515;
+            font-size: 8rem;
+            letter-spacing: 1px;
+        }
+
+        div[title='404']:before,
+        div[title='404']:after {
+            content: attr(title);
+            position: absolute;
+            left: 4%;
+        }
+
+        div[title='404']:before {
+            animation: glitchTop 1s linear infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        }
+
+        div[title='404']:after {
+            animation: glitchBotom 1.5s linear infinite;
+            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        }
+
+
+        @keyframes glitch {
+
+            2%,
+            64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+
+
+        @keyframes glitchTop {
+
+            2%,
+            64% {
+                transform: translate(2px, -2px);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 2px);
+            }
+
+            62% {
+                transform: translate(13px, -1px) skew(-13deg);
+            }
+        }
+
+        @keyframes glitchBotom {
+
+            2%,
+            64% {
+                transform: translate(-2px, 0);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 0);
+            }
+
+            62% {
+                transform: translate(-22px, 5px) skew(21deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container not-found-container">
+        <div>
+            <div class="text-center" title="404">404</div>
+            <h5 class="text-center text">Page Not Found</h5>
+        </div>
+
+        <div class="text-center not-found-detail">
+            <p class="lead">We're sorry, but the page you are looking for cannot be found.</p>
+            <p class="lead">Please check the URL or go back to the <a href="/">Home →</a></p>
+
+            <div class="header-logo">
+                <a href="index.html">Aït Kine</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
