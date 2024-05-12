@@ -1197,6 +1197,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 
 .owl-carousel .owl-stage {
   position: relative;
+  cursor: grab;
   -ms-touch-action: pan-Y;
 }
 

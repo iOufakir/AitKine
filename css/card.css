@@ -8,7 +8,6 @@
   margin: 2rem auto;
   max-width: 80rem;
   width: 100%;
-  font-weight: 700;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
@@ -24,7 +23,8 @@
 .card__info__place {
   text-decoration: underline;
   font-size: 14px;
-  color: #2f2f31;
+  color: #c78c54;
+  font-weight: bold;
 }
 
 .card__info__time {
@@ -50,6 +50,7 @@
 .card__weather__temp {
   color: #2f2f31;
   font-size: 30px;
+  font-weight: 700;
 }
 
 .card__weather__description {
