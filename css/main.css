@@ -1548,6 +1548,11 @@ h1.intro-header::before {
   top: 2px;
 }
 
+span.icon-play {
+  font-size: 2rem;
+  top: 4px !important;
+}
+
 .home-content-left .button.stroke:hover,
 .home-content-left .button.stroke:focus {
   background-color: white !important;
@@ -1836,6 +1841,11 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
   .home-content-left h1 {
     font-size: 3.6rem;
   }
+
+  .custom-select {
+    width: 100%;
+    margin: auto;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1856,6 +1866,10 @@ html[data-useragent*="MSIE 10.0"] .home-scrolldown,
   }
   .scroll-icon {
     top: 21px;
+  }
+
+  div.card {
+    padding: 2rem;
   }
 }
 
