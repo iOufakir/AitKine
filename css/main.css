@@ -817,8 +817,8 @@ button.button-primary:focus,
 input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
-  background: #309a3f;
-  border-color: #309a3f;
+  background: #8c5b2e;
+  border-color: #8c5b2e;
 }
 
 button.full-width,
@@ -1357,7 +1357,7 @@ h1.intro-header::before {
   bottom: 2px;
 }
 
-#header-nav-wrap .cta {
+#header-nav-wrap .cta, .custom-select {
   height: 3.6rem;
   line-height: calc(3.6rem - 0.6rem);
   padding: 0 1.5rem;
@@ -1366,6 +1366,15 @@ h1.intro-header::before {
   text-transform: none;
   letter-spacing: normal;
   margin: 0;
+}
+
+.custom-select {
+  display: inline-block;
+  padding: 0 1rem;
+  width: 15rem;
+  margin-left: 4rem;
+  margin-right: 1rem;
+  box-shadow: 0 0 4px 0px #c78c54;
 }
 
 /* ------------------------------------------------------------------- 
